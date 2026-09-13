@@ -20,9 +20,8 @@ export default function ExperienceTimeline({ experiences }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative flex flex-col sm:flex-row items-start ${
-                isEven ? 'sm:flex-row-reverse' : ''
-              }`}
+              className={`relative flex flex-col sm:flex-row items-start ${isEven ? '' : 'sm:flex-row-reverse'
+                }`}
             >
               {/* Timeline Center Glowing Node */}
               <div className="absolute left-4 sm:left-1/2 top-6 -translate-x-1/2 z-20 flex items-center justify-center">
