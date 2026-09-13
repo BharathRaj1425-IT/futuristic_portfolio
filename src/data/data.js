@@ -154,7 +154,7 @@ export const experiences = [
       // "Engineered high-performance React frontends with WebGL graph visualizations for multi-agent reasoning graphs.",
       // "Cut cloud infrastructure costs by 34% through model quantization and semantic vector caching.",
     ],
-    techStack: ["React", "TypeScript", "Node.js", ".Net Core", "WPF", "Jira"],
+    techStack: ["React", "Redux", "TypeScript", "Node.js", "WebSockets", ".Net Core", "WPF", "Jira", "Git"],
   },
   {
     id: "exp-2",
