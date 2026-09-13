@@ -147,7 +147,7 @@ export const experiences = [
     company: "Rugged Monitoring",
     period: "Sept, 2026 — Present",
     location: "Madhapur, Hyderabad",
-    badge: "Current Role",
+    badge: "Full-Time",
     description: "Developing scalable software and real-time monitoring solutions for industrial systems, leveraging IoT, data processing, and modern engineering practices to deliver reliable and intelligent monitoring platforms.",
     highlights: [
       // "Architected sub-100ms LLM streaming pipeline supporting 150k daily active users using WebSockets and Redis.",
