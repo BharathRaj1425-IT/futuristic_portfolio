@@ -67,7 +67,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 rounded-full bg-neon-cyan/10 border border-neon-cyan/30 shadow-sm"
+                      className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-cyan/15 to-royal-amethyst/15 border border-neon-cyan/40 shadow-[0_0_12px_rgba(0,240,255,0.3)]"
                       transition={{ type: 'spring', damping: 25, stiffness: 350 }}
                     />
                   )}

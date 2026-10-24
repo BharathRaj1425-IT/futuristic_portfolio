@@ -56,7 +56,7 @@ export default function SectionHeading({
         whileInView={{ width: '80px', opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className={`h-0.5 bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple mt-5 ${isCenter ? 'mx-auto' : ''}`}
+        className={`h-0.5 bg-gradient-to-r from-neon-cyan via-royal-amethyst to-royal-amethystLight mt-5 ${isCenter ? 'mx-auto' : ''}`}
       />
     </div>
   );

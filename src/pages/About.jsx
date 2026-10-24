@@ -144,7 +144,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <CardGlow accentColor="cyan" className="p-6 sm:p-8 h-full">
+                <CardGlow accentColor={index % 2 === 0 ? "cyan" : "purple"} className="p-6 sm:p-8 h-full">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-cyber-darker border border-neon-cyan/40 flex items-center justify-center text-neon-cyan shrink-0 shadow-neon-cyan">
                       <Icon className="w-6 h-6" />

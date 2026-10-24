@@ -20,7 +20,7 @@ export default function HoloSphere() {
     window.addEventListener('resize', handleResize);
 
     // 3D Point Sphere Configuration
-    const POINT_COUNT = 140;
+    const POINT_COUNT = 145;
     const SPHERE_RADIUS = Math.min(width, height) * 0.36;
     const points = [];
 
@@ -39,11 +39,11 @@ export default function HoloSphere() {
       });
     }
 
-    // Orbital Rings
+    // Orbital Rings - Electric Cyan & Royal Amethyst
     const rings = [
-      { radius: SPHERE_RADIUS * 1.25, tiltX: 0.8, tiltY: 0.2, speed: 0.012, color: '#00f5d4' },
-      { radius: SPHERE_RADIUS * 1.45, tiltX: -0.6, tiltY: 0.7, speed: -0.009, color: '#a855f7' },
-      { radius: SPHERE_RADIUS * 1.6, tiltX: 0.3, tiltY: -0.9, speed: 0.007, color: '#38bdf8' },
+      { radius: SPHERE_RADIUS * 1.25, tiltX: 0.8, tiltY: 0.2, speed: 0.012, color: '#00f0ff' }, // Electric Cyan
+      { radius: SPHERE_RADIUS * 1.45, tiltX: -0.6, tiltY: 0.7, speed: -0.009, color: '#9d4edd' }, // Royal Amethyst
+      { radius: SPHERE_RADIUS * 1.6, tiltX: 0.3, tiltY: -0.9, speed: 0.007, color: '#7b2cbf' }, // Deep Amethyst
     ];
 
     let rotX = 0;
@@ -82,16 +82,16 @@ export default function HoloSphere() {
       const cosX = Math.cos(currentRotX);
       const sinX = Math.sin(currentRotX);
 
-      // Central Pulsating AI Core
+      // Central Pulsating AI Core with Royal Amethyst & Electric Cyan
       const corePulse = Math.sin(time * 2.5) * 6 + 28;
-      const coreGrad = ctx.createRadialGradient(cx, cy, 2, cx, cy, corePulse * 2.5);
-      coreGrad.addColorStop(0, 'rgba(0, 245, 212, 0.9)');
-      coreGrad.addColorStop(0.3, 'rgba(56, 189, 248, 0.4)');
-      coreGrad.addColorStop(0.7, 'rgba(168, 85, 247, 0.15)');
-      coreGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      const coreGrad = ctx.createRadialGradient(cx, cy, 2, cx, cy, corePulse * 2.6);
+      coreGrad.addColorStop(0, 'rgba(0, 240, 255, 0.95)'); // Electric Cyan core
+      coreGrad.addColorStop(0.35, 'rgba(157, 78, 221, 0.6)'); // Royal Amethyst mantle
+      coreGrad.addColorStop(0.75, 'rgba(123, 44, 191, 0.25)'); // Deep Amethyst corona
+      coreGrad.addColorStop(1, 'rgba(5, 5, 5, 0)');
 
       ctx.beginPath();
-      ctx.arc(cx, cy, corePulse * 2.5, 0, Math.PI * 2);
+      ctx.arc(cx, cy, corePulse * 2.6, 0, Math.PI * 2);
       ctx.fillStyle = coreGrad;
       ctx.fill();
 
@@ -130,7 +130,7 @@ export default function HoloSphere() {
       projectedPoints.sort((a, b) => a.z2 - b.z2);
 
       // Draw connecting holographic web lines
-      ctx.lineWidth = 0.6;
+      ctx.lineWidth = 0.65;
       for (let i = 0; i < projectedPoints.length; i++) {
         const p1 = projectedPoints[i];
         for (let j = i + 1; j < projectedPoints.length; j++) {
@@ -140,24 +140,24 @@ export default function HoloSphere() {
             ctx.beginPath();
             ctx.moveTo(p1.px, p1.py);
             ctx.lineTo(p2.px, p2.py);
-            const lineAlpha = (1 - dist / 46) * Math.min(p1.alpha, p2.alpha) * 0.35;
-            ctx.strokeStyle = `rgba(0, 245, 212, ${lineAlpha})`;
+            const lineAlpha = (1 - dist / 46) * Math.min(p1.alpha, p2.alpha) * 0.4;
+            ctx.strokeStyle = `rgba(0, 240, 255, ${lineAlpha})`;
             ctx.stroke();
           }
         }
       }
 
-      // Render glowing nodes
+      // Render glowing nodes in Electric Cyan & Royal Amethyst
       for (let i = 0; i < projectedPoints.length; i++) {
         const { px, py, alpha, scale } = projectedPoints[i];
-        const dotRadius = Math.max(1, 2.4 * scale);
+        const dotRadius = Math.max(1, 2.5 * scale);
 
         ctx.beginPath();
         ctx.arc(px, py, dotRadius, 0, Math.PI * 2);
-        ctx.fillStyle = alpha > 0.5 ? '#00f5d4' : '#38bdf8';
-        ctx.globalAlpha = alpha * 0.9;
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = '#00f5d4';
+        ctx.fillStyle = alpha > 0.5 ? '#00f0ff' : '#c77dff';
+        ctx.globalAlpha = alpha * 0.95;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = alpha > 0.5 ? '#00f0ff' : '#9d4edd';
         ctx.fill();
       }
       ctx.globalAlpha = 1;
@@ -173,8 +173,8 @@ export default function HoloSphere() {
         ctx.beginPath();
         ctx.arc(0, 0, ring.radius, 0, Math.PI * 2);
         ctx.strokeStyle = ring.color;
-        ctx.lineWidth = 1.2;
-        ctx.globalAlpha = 0.35 + Math.sin(time + index) * 0.15;
+        ctx.lineWidth = 1.3;
+        ctx.globalAlpha = 0.4 + Math.sin(time + index) * 0.15;
         ctx.setLineDash([8, 14]);
         ctx.stroke();
 
@@ -184,9 +184,9 @@ export default function HoloSphere() {
         const satY = Math.sin(angle) * ring.radius;
 
         ctx.beginPath();
-        ctx.arc(satX, satY, 3.5, 0, Math.PI * 2);
+        ctx.arc(satX, satY, 3.8, 0, Math.PI * 2);
         ctx.fillStyle = ring.color;
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = 14;
         ctx.shadowColor = ring.color;
         ctx.fill();
 
@@ -209,24 +209,26 @@ export default function HoloSphere() {
     <div className="relative w-full h-[380px] sm:h-[460px] lg:h-[540px] flex items-center justify-center">
       {/* Background radial highlight */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-72 h-72 rounded-full bg-neon-cyan/10 filter blur-3xl animate-pulse" />
+        <div className="w-72 h-72 rounded-full bg-royal-amethyst/15 filter blur-3xl animate-pulse" />
+        <div className="w-56 h-56 rounded-full bg-neon-cyan/15 filter blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
 
       {/* Cyber Reticle Markers */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full border border-dashed border-neon-cyan/20 animate-spin-slow" />
+        <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] rounded-full border border-dashed border-neon-cyan/25 animate-spin-slow" />
+        <div className="w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] rounded-full border border-dotted border-royal-amethyst/30" />
       </div>
 
       <canvas ref={canvasRef} className="relative z-10 w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Futuristic HUD overlay tags */}
-      <div className="absolute bottom-4 left-6 hidden sm:flex items-center gap-2 text-[10px] font-mono text-neon-cyan/70 bg-cyber-dark/80 px-2.5 py-1 rounded border border-neon-cyan/20 backdrop-blur-md">
+      <div className="absolute bottom-4 left-6 hidden sm:flex items-center gap-2 text-[10px] font-mono text-neon-cyan/80 bg-cyber-dark/90 px-2.5 py-1 rounded border border-neon-cyan/30 backdrop-blur-md">
         <span className="inline-block w-1.5 h-1.5 rounded-full bg-neon-cyan animate-ping" />
         AI MATRIX TELEMETRY // ACTIVE
       </div>
 
-      <div className="absolute top-4 right-6 hidden sm:flex items-center gap-2 text-[10px] font-mono text-slate-400 bg-cyber-dark/80 px-2.5 py-1 rounded border border-slate-700/50 backdrop-blur-md">
-        COORDS: [37.7749° N, 122.4194° W]
+      <div className="absolute top-4 right-6 hidden sm:flex items-center gap-2 text-[10px] font-mono text-royal-amethystLight bg-cyber-dark/90 px-2.5 py-1 rounded border border-royal-amethyst/40 backdrop-blur-md">
+        PALETTE: [JET BLACK // ROYAL AMETHYST // ELECTRIC CYAN]
       </div>
     </div>
   );

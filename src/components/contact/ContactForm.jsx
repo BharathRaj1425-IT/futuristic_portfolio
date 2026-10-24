@@ -52,7 +52,7 @@ export default function ContactForm() {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#00f5d4', '#38bdf8', '#a855f7'],
+        colors: ['#00f0ff', '#9d4edd', '#c77dff', '#7b2cbf'],
       });
     } catch (err) {
       setStatus('error');

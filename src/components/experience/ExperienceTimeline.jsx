@@ -7,7 +7,7 @@ export default function ExperienceTimeline({ experiences }) {
   return (
     <div className="relative">
       {/* Central Cyber Vertical Connector Line */}
-      <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-neon-cyan via-neon-blue to-neon-purple opacity-30" />
+      <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-gradient-to-b from-neon-cyan via-royal-amethyst to-royal-amethystDeep opacity-40" />
 
       <div className="space-y-12 sm:space-y-16">
         {experiences.map((exp, index) => {
@@ -23,11 +23,11 @@ export default function ExperienceTimeline({ experiences }) {
               className={`relative flex flex-col sm:flex-row items-start ${isEven ? '' : 'sm:flex-row-reverse'
                 }`}
             >
-              {/* Timeline Center Glowing Node */}
+              {/* Timeline Center Glowing Node - Alternating Electric Cyan & Royal Amethyst */}
               <div className="absolute left-4 sm:left-1/2 top-6 -translate-x-1/2 z-20 flex items-center justify-center">
-                <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-cyber-black border-2 border-neon-cyan shadow-neon-cyan">
-                  <span className="w-2 h-2 rounded-full bg-neon-cyan" />
-                  <span className="absolute inset-0 rounded-full border border-neon-cyan/50 animate-ping" />
+                <div className={`relative flex items-center justify-center w-8 h-8 rounded-full bg-cyber-black border-2 ${isEven ? 'border-neon-cyan shadow-neon-cyan' : 'border-royal-amethyst shadow-royal-amethyst'}`}>
+                  <span className={`w-2 h-2 rounded-full ${isEven ? 'bg-neon-cyan' : 'bg-royal-amethyst'}`} />
+                  <span className={`absolute inset-0 rounded-full border ${isEven ? 'border-neon-cyan/50' : 'border-royal-amethyst/50'} animate-ping`} />
                 </div>
               </div>
 
@@ -36,11 +36,11 @@ export default function ExperienceTimeline({ experiences }) {
                 <CardGlow accentColor={isEven ? 'cyan' : 'purple'} className="p-6 sm:p-7">
                   {/* Top Metadata Header */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium tracking-wide bg-neon-cyan/15 text-neon-cyan border border-neon-cyan/30">
+                    <span className={`px-2.5 py-0.5 rounded text-[11px] font-mono font-medium tracking-wide ${isEven ? 'bg-neon-cyan/15 text-neon-cyan border border-neon-cyan/30' : 'bg-royal-amethyst/20 text-royal-amethystLight border border-royal-amethyst/40'}`}>
                       {exp.badge}
                     </span>
                     <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
-                      <Calendar className="w-3.5 h-3.5 text-neon-cyan" />
+                      <Calendar className={`w-3.5 h-3.5 ${isEven ? 'text-neon-cyan' : 'text-royal-amethyst'}`} />
                       <span>{exp.period}</span>
                     </div>
                   </div>

@@ -34,12 +34,12 @@ export default function SkillCard({ skill, index = 0 }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: (index % 6) * 0.05 }}
     >
-      <CardGlow accentColor="cyan" className="p-4 sm:p-5 h-full flex flex-col justify-between">
+      <CardGlow accentColor={index % 2 === 0 ? "cyan" : "amethyst"} className="p-4 sm:p-5 h-full flex flex-col justify-between">
         <div>
           {/* Top Row: Icon + Skill Name + Level Label */}
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-cyber-darker border border-neon-cyan/30 flex items-center justify-center text-neon-cyan shadow-sm">
+              <div className={`w-10 h-10 rounded-lg bg-cyber-darker border ${index % 2 === 0 ? 'border-neon-cyan/40 text-neon-cyan shadow-[0_0_12px_rgba(0,240,255,0.25)]' : 'border-royal-amethyst/40 text-royal-amethystLight shadow-[0_0_12px_rgba(157,78,221,0.25)]'} flex items-center justify-center`}>
                 <IconComponent className="w-5 h-5" />
               </div>
               <div>
@@ -53,7 +53,7 @@ export default function SkillCard({ skill, index = 0 }) {
             </div>
 
             <div className="text-right">
-              <span className="text-sm font-mono font-bold text-neon-cyan">
+              <span className={`text-sm font-mono font-bold ${index % 2 === 0 ? 'text-neon-cyan' : 'text-royal-amethystLight'}`}>
                 {skill.level}%
               </span>
             </div>
@@ -68,7 +68,7 @@ export default function SkillCard({ skill, index = 0 }) {
               whileInView={{ width: `${skill.level}%` }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-              className="h-full bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-purple rounded-full shadow-neon-cyan relative"
+              className="h-full bg-gradient-to-r from-neon-cyan via-royal-amethyst to-royal-amethystLight rounded-full shadow-[0_0_10px_rgba(0,240,255,0.4)] relative"
             >
               <div className="absolute top-0 right-0 bottom-0 w-2 bg-white/70 rounded-full animate-pulse" />
             </motion.div>

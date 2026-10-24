@@ -115,28 +115,28 @@ export const coreValues = [
     title: "Zero-Latency Engineering",
     description: "Every millisecond counts. Obsessive focus on code efficiency, bundle splitting, edge caching, and optimized database queries.",
     icon: "Zap",
-    gradient: "from-cyan-500 to-blue-500",
+    gradient: "from-neon-cyan to-royal-amethyst",
   },
   {
     id: "cinematic",
     title: "Cinematic Aesthetics",
     description: "Interfaces shouldn't just function—they should captivate. Deep dark mode palettes, fluid 60fps animations, and tactile feedback.",
     icon: "Sparkles",
-    gradient: "from-blue-500 to-purple-500",
+    gradient: "from-royal-amethyst via-royal-amethystLight to-neon-cyan",
   },
   {
     id: "ai",
     title: "Intelligent Automation",
     description: "Harnessing modern LLM inference, embedding vectors, and autonomous agentic workflows to build software that thinks ahead.",
     icon: "Cpu",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-royal-amethystDeep to-royal-amethyst",
   },
   {
     id: "scale",
     title: "Fault-Tolerant Architecture",
     description: "Designing cloud-native systems with automated failover, graceful degradation, and comprehensive telemetry.",
     icon: "ShieldCheck",
-    gradient: "from-emerald-500 to-cyan-500",
+    gradient: "from-neon-cyan via-royal-amethyst to-royal-amethystDeep",
   },
 ];
 

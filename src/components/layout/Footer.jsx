@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-slate-800/80 bg-cyber-darker/90 backdrop-blur-xl">
       {/* Top ambient line */}
-      <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-neon-cyan/40 to-transparent" />
+      <div className="h-0.5 w-full bg-gradient-to-r from-transparent via-royal-amethyst/60 via-neon-cyan/70 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12">

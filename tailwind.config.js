@@ -8,26 +8,55 @@ export default {
   theme: {
     extend: {
       colors: {
-        cyber: {
-          black: '#030712',
-          darker: '#060b18',
-          dark: '#0a1026',
-          panel: 'rgba(13, 20, 41, 0.75)',
-          panelHover: 'rgba(19, 31, 64, 0.85)',
-          border: 'rgba(0, 245, 212, 0.15)',
-          borderHover: 'rgba(0, 245, 212, 0.45)',
-          purpleBorder: 'rgba(168, 85, 247, 0.25)',
+        // Jet Black Palette
+        jet: {
+          black: '#050505',
+          deep: '#08070d',
+          surface: '#0e0d17',
+          card: 'rgba(14, 13, 23, 0.78)',
+          cardHover: 'rgba(23, 20, 38, 0.88)',
+          border: 'rgba(0, 240, 255, 0.16)',
+          borderHover: 'rgba(0, 240, 255, 0.5)',
+          amethystBorder: 'rgba(157, 78, 221, 0.3)',
           text: '#f8fafc',
           muted: '#94a3b8',
         },
+        cyber: {
+          black: '#050505', // Jet Black
+          darker: '#08070d', // Deepest Jet Black
+          dark: '#0e0d17', // Jet Surface
+          panel: 'rgba(14, 13, 23, 0.78)',
+          panelHover: 'rgba(23, 20, 38, 0.88)',
+          border: 'rgba(0, 240, 255, 0.16)',
+          borderHover: 'rgba(0, 240, 255, 0.5)',
+          purpleBorder: 'rgba(157, 78, 221, 0.3)',
+          text: '#f8fafc',
+          muted: '#94a3b8',
+        },
+        // Electric Cyan & Royal Amethyst Accents
+        electric: {
+          cyan: '#00f0ff',
+          cyanGlow: '#00f0ff40',
+          cyanLight: '#70f7ff',
+          cyanDark: '#00b4d8',
+        },
+        royal: {
+          amethyst: '#9d4edd',
+          amethystLight: '#c77dff',
+          amethystDeep: '#7b2cbf',
+          amethystDark: '#5a189a',
+          amethystGlow: '#9d4edd40',
+        },
         neon: {
-          cyan: '#00f5d4',
-          cyanGlow: '#00f5d440',
-          blue: '#38bdf8',
-          blueGlow: '#38bdf840',
-          purple: '#a855f7',
-          purpleGlow: '#a855f740',
-          pink: '#f43f5e',
+          // Re-mapped to Electric Cyan & Royal Amethyst
+          cyan: '#00f0ff',
+          cyanGlow: '#00f0ff40',
+          blue: '#38d9f8',
+          blueGlow: '#38d9f840',
+          purple: '#9d4edd', // Royal Amethyst
+          purpleGlow: '#9d4edd40',
+          amethyst: '#7b2cbf',
+          pink: '#e056fd',
           amber: '#f59e0b',
           emerald: '#10b981',
         },
@@ -38,11 +67,13 @@ export default {
         display: ['Orbitron', 'Rajdhani', 'sans-serif'],
       },
       boxShadow: {
-        'neon-cyan': '0 0 20px -3px rgba(0, 245, 212, 0.45)',
-        'neon-blue': '0 0 20px -3px rgba(56, 189, 248, 0.45)',
-        'neon-purple': '0 0 20px -3px rgba(168, 85, 247, 0.45)',
-        'cyber-card': '0 8px 32px 0 rgba(0, 0, 0, 0.45)',
-        'cyber-glow': 'inset 0 0 15px rgba(0, 245, 212, 0.15), 0 0 25px rgba(0, 245, 212, 0.2)',
+        'electric-cyan': '0 0 24px -2px rgba(0, 240, 255, 0.55)',
+        'royal-amethyst': '0 0 26px -2px rgba(157, 78, 221, 0.55)',
+        'neon-cyan': '0 0 22px -3px rgba(0, 240, 255, 0.5)',
+        'neon-blue': '0 0 20px -3px rgba(56, 217, 248, 0.45)',
+        'neon-purple': '0 0 24px -3px rgba(157, 78, 221, 0.5)',
+        'cyber-card': '0 8px 32px 0 rgba(0, 0, 0, 0.65)',
+        'cyber-glow': 'inset 0 0 16px rgba(0, 240, 255, 0.16), 0 0 28px rgba(157, 78, 221, 0.25)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -65,8 +96,8 @@ export default {
         }
       },
       backgroundImage: {
-        'cyber-grid': 'linear-gradient(to right, rgba(0, 245, 212, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 245, 212, 0.05) 1px, transparent 1px)',
-        'cyber-dots': 'radial-gradient(rgba(0, 245, 212, 0.15) 1px, transparent 1px)',
+        'cyber-grid': 'linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(157, 78, 221, 0.05) 1px, transparent 1px)',
+        'cyber-dots': 'radial-gradient(rgba(0, 240, 255, 0.18) 1px, transparent 1px)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },

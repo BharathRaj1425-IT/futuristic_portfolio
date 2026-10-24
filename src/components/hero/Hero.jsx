@@ -69,7 +69,7 @@ export default function Hero() {
             {/* Main Cyber Heading */}
             <h1 className="text-4xl sm:text-6xl xl:text-7xl font-extrabold tracking-tight text-white mb-4 font-display">
               Hey, I'm <br />
-              <span className="cyber-gradient-text drop-shadow-[0_0_25px_rgba(0,245,212,0.35)]">
+              <span className="cyber-gradient-text drop-shadow-[0_0_25px_rgba(0,240,255,0.45)]">
                 {personalInfo.nick_name}
               </span>
             </h1>

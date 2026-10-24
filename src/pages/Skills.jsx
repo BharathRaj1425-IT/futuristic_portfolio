@@ -31,8 +31,8 @@ export default function Skills() {
           <button
             onClick={() => setActiveTab('all')}
             className={`px-5 py-2.5 rounded-full text-xs font-mono font-semibold transition-all backdrop-blur-md ${activeTab === 'all'
-                ? 'bg-neon-cyan text-cyber-black shadow-neon-cyan'
-                : 'bg-cyber-dark/80 text-slate-300 border border-slate-800 hover:border-neon-cyan/40'
+                ? 'bg-neon-cyan text-cyber-black shadow-[0_0_18px_rgba(0,240,255,0.45)]'
+                : 'bg-cyber-dark/80 text-slate-300 border border-slate-800 hover:border-royal-amethyst/50 hover:text-white'
               }`}
           >
             [ ALL CAPABILITIES ] ({allSkills.length})
@@ -43,8 +43,8 @@ export default function Skills() {
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
               className={`px-5 py-2.5 rounded-full text-xs font-mono font-semibold transition-all backdrop-blur-md ${activeTab === cat.id
-                  ? 'bg-neon-cyan text-cyber-black shadow-neon-cyan'
-                  : 'bg-cyber-dark/80 text-slate-300 border border-slate-800 hover:border-neon-cyan/40'
+                  ? 'bg-gradient-to-r from-neon-cyan to-royal-amethyst text-cyber-black shadow-[0_0_18px_rgba(157,78,221,0.45)]'
+                  : 'bg-cyber-dark/80 text-slate-300 border border-slate-800 hover:border-neon-cyan/40 hover:text-white'
                 }`}
             >
               {cat.title} ({cat.skills.length})

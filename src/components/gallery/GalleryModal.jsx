@@ -36,7 +36,7 @@ export default function GalleryModal({ item, onClose }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-cyber-dark/95 border border-neon-cyan/40 shadow-2xl flex flex-col cyber-corners"
+          className="relative z-10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-cyber-dark/95 border border-royal-amethyst/50 shadow-[0_0_35px_rgba(157,78,221,0.3)] flex flex-col cyber-corners"
         >
           {/* Header Bar */}
           <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-800/80 bg-cyber-darker/80">

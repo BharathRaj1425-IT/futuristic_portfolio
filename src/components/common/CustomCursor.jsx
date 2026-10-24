@@ -59,7 +59,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer Tracking Reticle */}
+      {/* Outer Tracking Reticle - Electric Cyan idling, Royal Amethyst on hover */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-neon-cyan/50 hidden md:block"
         animate={{
@@ -68,8 +68,8 @@ export default function CustomCursor() {
           width: isHovered ? 48 : 32,
           height: isHovered ? 48 : 32,
           scale: isClicked ? 0.85 : 1,
-          borderColor: isHovered ? '#00f5d4' : 'rgba(0, 245, 212, 0.4)',
-          backgroundColor: isHovered ? 'rgba(0, 245, 212, 0.08)' : 'transparent',
+          borderColor: isHovered ? '#9d4edd' : 'rgba(0, 240, 255, 0.45)',
+          backgroundColor: isHovered ? 'rgba(157, 78, 221, 0.12)' : 'transparent',
         }}
         transition={{
           type: 'spring',
@@ -78,11 +78,13 @@ export default function CustomCursor() {
           mass: 0.5,
         }}
         style={{
-          boxShadow: isHovered ? '0 0 16px rgba(0, 245, 212, 0.4)' : 'none',
+          boxShadow: isHovered
+            ? '0 0 20px rgba(157, 78, 221, 0.6), 0 0 10px rgba(0, 240, 255, 0.4)'
+            : '0 0 8px rgba(0, 240, 255, 0.25)',
         }}
       />
 
-      {/* Center Precision Dot */}
+      {/* Center Precision Dot - Electric Cyan */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-50 rounded-full bg-neon-cyan hidden md:block"
         animate={{
@@ -99,7 +101,7 @@ export default function CustomCursor() {
         style={{
           width: 6,
           height: 6,
-          boxShadow: '0 0 8px #00f5d4',
+          boxShadow: '0 0 10px #00f0ff',
         }}
       />
     </>
