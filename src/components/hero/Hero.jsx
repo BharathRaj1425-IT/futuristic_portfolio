@@ -97,13 +97,13 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
-              <Link
-                to="/gallery"
+            {/*  <Link
+                to="/experience"
                 className="relative px-7 py-3.5 rounded-xl font-mono text-sm font-semibold text-slate-200 border border-slate-700 bg-cyber-dark/80 hover:bg-slate-800/80 hover:border-neon-cyan/50 hover:text-neon-cyan transition-all duration-300 backdrop-blur-md flex items-center justify-center gap-2.5 w-full sm:w-auto"
               >
                 <Sparkles className="w-4 h-4 text-neon-cyan" />
                 <span>EXPLORE WORK</span>
-              </Link>
+              </Link> */}
 
               {/* <a
                 href={personalInfo.resumeUrl}

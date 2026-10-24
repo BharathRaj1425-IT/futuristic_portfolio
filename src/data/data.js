@@ -44,7 +44,7 @@ export const personalInfo = {
 
   // [CUSTOMIZE] Contact & Location details
   location: "Hyderabad, India (Open to Remote Worldwide)",
-  email: "bharatharun14259@gmail.com",
+  email: "bharatharjun14259@gmail.com",
   phone: "+91 9505004481",
   timezone: "IST (Indian Standard Time)",
 
